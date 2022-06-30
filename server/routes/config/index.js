@@ -5,7 +5,7 @@ router = express.Router(),
 router.get("/", function(req, res){
   console.info(`User ${req.Token._id} initiated config read.`);
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(configApi.getConfig(req.Token)));
+  res.send(JSON.stringify(configApi.getConfig(req.Token), null, 2));
 });
 
 router.put("/", function(req, res){
@@ -18,7 +18,7 @@ router.put("/", function(req, res){
   let result = configApi.saveConfig(req.Token, configChanges);
 
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(result));
+  res.send(JSON.stringify(result, null, 2));
 });
 
 module.exports = router;

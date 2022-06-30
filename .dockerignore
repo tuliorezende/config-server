@@ -4,3 +4,5 @@ node_modules
 .vscode
 .yarn-integrity
 stats.json
+.vs
+.git
